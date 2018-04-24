@@ -5,14 +5,13 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
+%w(np-mongodb national-parks).each do |pkg|
+  describe command("hab sup status gsreynolds/#{pkg}") do
+    its('exit_status') { should eq 0 }
   end
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe http('http://localhost:8080/national-parks/', enable_remote_worker: true) do
+  its('status') { should cmp 200 }
+  its('body') { should match 'U.S. National Parks v6.3' }
 end

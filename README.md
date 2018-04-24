@@ -1,4 +1,3 @@
-# gr_national_parks
+# gr_national_parks cookbook
 
-TODO: Enter the cookbook description here.
-
+This cookbook installs the National Parks demo application using Habitat.

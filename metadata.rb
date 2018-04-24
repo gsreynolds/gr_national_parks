@@ -1,20 +1,16 @@
 name 'gr_national_parks'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
-license 'All Rights Reserved'
+maintainer 'Gavin Reynolds'
+maintainer_email 'gsreynolds@gmail.com'
+license 'Apache-2.0'
 description 'Installs/Configures gr_national_parks'
 long_description 'Installs/Configures gr_national_parks'
 version '0.1.0'
-chef_version '>= 12.14' if respond_to?(:chef_version)
+chef_version '>= 13'
 
-# The `issues_url` points to the location where issues for this cookbook are
-# tracked.  A `View Issues` link will be displayed on this cookbook's page when
-# uploaded to a Supermarket.
-#
-# issues_url 'https://github.com/<insert_org_here>/gr_national_parks/issues'
+depends 'habitat'
 
-# The `source_url` points to the development repository for this cookbook.  A
-# `View Source` link will be displayed on this cookbook's page when uploaded to
-# a Supermarket.
-#
-# source_url 'https://github.com/<insert_org_here>/gr_national_parks'
+supports 'ubuntu'
+supports 'centos'
+
+issues_url 'https://github.com/gsreynolds/gr_national_parks/issues'
+source_url 'https://github.com/gsreynolds/gr_national_parks'
